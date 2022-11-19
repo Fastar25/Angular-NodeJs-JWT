@@ -33,8 +33,7 @@ module.exports.signup = (req, res) => {
             console.log(decryptpwd);
 
             // insertion des donnees
-            let insertqry = `insert into users(name,email,password)
-            values ('${name}','${email}','${decryptpwd}')`;
+            let insertqry = `insert into users(name,email,password) values ('${name}','${email}','${decryptpwd}')`;
 
             db.query(insertqry, (err, result) => {
                 if (err) throw err;
@@ -43,6 +42,7 @@ module.exports.signup = (req, res) => {
                     message: 'enregistreement reussie '
                 })
             })
+            console.log('ok');
 
 
         }

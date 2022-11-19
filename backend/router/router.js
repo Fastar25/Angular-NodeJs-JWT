@@ -4,16 +4,16 @@ const router = express.Router();
 //controller path 
 const controller = require('../controller/controller')
 
-router.get('/home', requiredToken, controller.home);
+router.get('/home', controller.home);
 
 //signup routes 
-router.post('/signup', requiredToken, controller.signup)
+router.post('/signup', controller.signup)
 
 //login routes 
-router.post('/login', requiredToken, controller.login)
+router.post('/login', controller.login)
 
 //course route 
-router.get('/tutorial', requiredToken, controller.tutorial)
+router.get('/tutorial', controller.tutorial)
 
 function requiredToken(req, res, next) {
     let headers = req.headers["token"];
