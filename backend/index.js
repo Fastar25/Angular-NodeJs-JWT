@@ -11,9 +11,11 @@ db.connect((err) => {
     err ? console.log('connexion echouée') : console.log('connexion reussie')
 
 });
-app.use(cors)
-app.use(bodyparser.json())
+app.use(cors());
+app.use(bodyparser.json());
 app.use('/api', routes);
+
+
 
 
 app.listen(3000, (err) => {

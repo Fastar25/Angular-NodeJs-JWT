@@ -69,12 +69,19 @@ module.exports.login = (req, res) => {
                 let token = jwt.sign({ data }, 'privatkey')
                 console.log(token);
                 res.send({
+                    result: {
+                        'email': email,
+                        'password': password,
+                        'name': result[0].name,
+                    },
+                    status: 'true',
                     message: 'Connexion reussie',
                     token: token
                 })
             }
             else {
                 res.send({
+                    status: 'false',
                     message: 'Email ou mot de passe incorrect'
                 })
             }
